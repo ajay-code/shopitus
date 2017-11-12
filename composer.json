@@ -9,12 +9,14 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "infyomlabs/adminlte-templates": "5.4.x-dev",
+        "infyomlabs/laravel-generator": "5.4.x-dev",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "symfony/polyfill-iconv": "^1.6",
-        "infyomlabs/laravel-generator": "5.4.x-dev",
         "laravelcollective/html": "^5.4.0",
-        "infyomlabs/adminlte-templates": "5.4.x-dev"
+        "symfony/polyfill-iconv": "^1.6",
+        "yajra/laravel-datatables-buttons": "^2.0",
+        "yajra/laravel-datatables-oracle": "^7.10"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
