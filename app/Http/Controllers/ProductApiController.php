@@ -23,7 +23,7 @@ class ProductApiController extends Controller
         if($request->store){
             $products = $products->where('store_id', $request->store);
         }
-        $products = $products->paginate(10);
+        $products = $products->paginate(8);
         return response()->json([
             'data' => $products->items(),
             'pageInfo' => $this->getPageInfo($products)
