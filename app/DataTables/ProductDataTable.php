@@ -71,9 +71,9 @@ class ProductDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'product_category_id' => ['name' => 'product_category_id', 'data' => 'product_category.name'],
-            'deal_type_id' => ['name' => 'deal_type_id', 'data' => 'deal_type.name'],
-            'store_id' => ['name' => 'store_id', 'data' => 'store.name'],
+            'product_category' => ['name' => 'product_category_id', 'data' => 'product_category.name'],
+            'deal_type' => ['name' => 'deal_type_id', 'data' => 'deal_type.name'],
+            'store' => ['name' => 'store_id', 'data' => 'store.name'],
             'image' => ['name' => 'image', 'data' => 'image', 'render' => '"<a href=\"/admin/storage/"+data+"\" target=\"_black\"><img src=\"/admin/storage/"+data+"\" height=\"50\"/></a>"'],
             'link' => ['name' => 'link', 'data' => 'link'],
             'text' => ['name' => 'text', 'data' => 'text']
