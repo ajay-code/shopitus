@@ -15,7 +15,9 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
+                    <div class="table-responsive">
                     @include('deal_types.table')
+                    </div>
             </div>
         </div>
     </div>

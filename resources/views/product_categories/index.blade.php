@@ -15,7 +15,9 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                    @include('product_categories.table')
+                    <div class="table-responsive">
+                        @include('product_categories.table')
+                    </div>
             </div>
         </div>
     </div>

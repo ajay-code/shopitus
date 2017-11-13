@@ -18,6 +18,7 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/api/products', 'ProductApiController@index');
 
 Route::middleware(['auth'])->group(function(){
     
