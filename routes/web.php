@@ -17,8 +17,11 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/api/products', 'ProductApiController@index');
+Route::get('home', 'HomeController@index');
+Route::prefix('api')->group(function () {
+    Route::get('products', 'ProductApiController@index');
+    Route::get('dropdowns', 'ProductApiController@dropdowns');
+});
 
 Route::middleware(['auth'])->group(function(){
     

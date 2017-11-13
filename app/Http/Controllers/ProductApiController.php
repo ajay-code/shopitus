@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
 use App\Models\Product;
+use App\Models\DealType;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
 
 class ProductApiController extends Controller
 {
@@ -25,6 +28,21 @@ class ProductApiController extends Controller
             'data' => $products->items(),
             'pageInfo' => $this->getPageInfo($products)
         ]);
+    }
+
+    /** 
+     * Get all the Product Categories, Deal types
+     * and Stores
+     * 
+     * @return array 
+     */
+    public function dropdowns()
+    {   
+      return response()->json([
+          'product_categories' => ProductCategory::all()->pluck('name', 'id'),
+          'deal_types' => DealType::all()->pluck('name', 'id'),
+          'stores' => Store::all()->pluck('name', 'id')
+      ]);
     }
 
     /**
