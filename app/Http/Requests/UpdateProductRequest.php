@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Store;
+use App\Models\Product;
 
-class UpdateStoreRequest extends FormRequest
+class UpdateProductRequest extends FormRequest
 {
 
     /**
@@ -25,9 +25,6 @@ class UpdateStoreRequest extends FormRequest
      */
     public function rules()
     {
-        return  [
-            'name' => 'required',
-            'image' => 'mimes:jpeg,jpg,png,gif'
-        ];
+        return Product::$rules;
     }
 }

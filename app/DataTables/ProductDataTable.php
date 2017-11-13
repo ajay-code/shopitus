@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\ProductCategory;
+use App\Models\Product;
 use Form;
 use Yajra\Datatables\Services\DataTable;
 
-class ProductCategoryDataTable extends DataTable
+class ProductDataTable extends DataTable
 {
 
     /**
@@ -16,7 +16,7 @@ class ProductCategoryDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'product_categories.datatables_actions')
+            ->addColumn('action', 'products.datatables_actions')
             ->make(true);
     }
 
@@ -27,8 +27,8 @@ class ProductCategoryDataTable extends DataTable
      */
     public function query()
     {
-        $productCategories = ProductCategory::query();
-        return $this->applyScopes($productCategories);
+        $products = Product::query()->with('product_category', 'deal_type', 'store');
+        return $this->applyScopes($products);
     }
 
     /**
@@ -70,7 +70,13 @@ class ProductCategoryDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'name' => ['name' => 'name', 'data' => 'name']
+            'name' => ['name' => 'name', 'data' => 'name'],
+            'product_category_id' => ['name' => 'product_category_id', 'data' => 'product_category.name'],
+            'deal_type_id' => ['name' => 'deal_type_id', 'data' => 'deal_type.name'],
+            'store_id' => ['name' => 'store_id', 'data' => 'store.name'],
+            'image' => ['name' => 'image', 'data' => 'image', 'render' => '"<a href=\"/admin/storage/"+data+"\" target=\"_black\"><img src=\"/admin/storage/"+data+"\" height=\"50\"/></a>"'],
+            'link' => ['name' => 'link', 'data' => 'link'],
+            'text' => ['name' => 'text', 'data' => 'text']
         ];
     }
 
@@ -81,6 +87,6 @@ class ProductCategoryDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'productCategories';
+        return 'products';
     }
 }

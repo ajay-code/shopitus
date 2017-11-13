@@ -56,7 +56,6 @@ class DealTypeDataTable extends DataTable
                          'buttons' => [
                              'csv',
                              'excel',
-                             'pdf',
                          ],
                     ],
                     'colvis'

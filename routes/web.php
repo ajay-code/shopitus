@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm');
 
 
 
@@ -21,12 +19,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('productCategories', 'ProductCategoryController');
+Route::middleware(['auth'])->group(function(){
+    
+    Route::resource('productCategories', 'ProductCategoryController');
+    
+    Route::resource('dealTypes', 'DealTypeController');
+    
+    Route::resource('productCategories', 'ProductCategoryController');
+    
+    Route::resource('dealTypes', 'DealTypeController');
+    
+    Route::resource('stores', 'StoreController');
+    
+    Route::resource('products', 'ProductController');
+    
+    Route::resource('products', 'ProductController');
 
-Route::resource('dealTypes', 'DealTypeController');
-
-Route::resource('productCategories', 'ProductCategoryController');
-
-Route::resource('dealTypes', 'DealTypeController');
-
-Route::resource('stores', 'StoreController');
+});

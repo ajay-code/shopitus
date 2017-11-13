@@ -120,7 +120,15 @@ class StoreController extends AppBaseController
             return redirect(route('stores.index'));
         }
 
-        $store = $this->storeRepository->update($request->all(), $id);
+        $input = [];
+        $input['name'] = $request->name;
+        if($request->hasFile('image')){
+            $request->image->store('images');
+            $name = $request->image->hashName();
+            $input['image'] = 'images/' . $name;
+        }
+
+        $store = $this->storeRepository->update($input, $id);
 
         Flash::success('Store updated successfully.');
 

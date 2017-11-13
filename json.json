@@ -1,0 +1,41 @@
+[
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text" ,
+        "validations": "required"
+    },
+    {
+        "name": "product_category_id",
+        "dbType": "integer:unsigned:foreign,product_categories,id",
+        "htmlType": "text",
+        "validations": "required"
+    },
+    {
+        "name": "deal_type_id",
+        "dbType": "integer:unsigned:foreign,deal_types,id",
+        "htmlType": "text"
+    },
+    {
+        "name": "store_id",
+        "dbType": "integer:unsigned:foreign,stores,id",
+        "htmlType": "text"
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "text"
+    },
+    {
+        "name": "link",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required"
+    },
+    {
+        "name": "text",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required"
+    }
+]

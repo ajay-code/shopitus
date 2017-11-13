@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProductCategory
@@ -14,7 +13,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class ProductCategory extends Model
 {
-    use SoftDeletes;
 
     public $table = 'product_categories';
     

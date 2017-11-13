@@ -56,7 +56,6 @@ class StoreDataTable extends DataTable
                          'buttons' => [
                              'csv',
                              'excel',
-                             'pdf',
                          ],
                     ],
                     'colvis'
@@ -73,7 +72,7 @@ class StoreDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'image' => ['name' => 'image', 'data' => 'image']
+            'image' => ['name' => 'image', 'data' => 'image', 'render' => '"<img src=\"/admin/storage/"+data+"\" height=\"50\"/>"']
         ];
     }
 
