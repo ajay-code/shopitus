@@ -58,10 +58,11 @@ class ProductController extends AppBaseController
     public function store(CreateProductRequest $request)
     {
         $input = $request->all();
-        $input = $request->all();
-        $request->image->store('images');
-        $name = $request->image->hashName();
-        $input['image'] = 'images/' . $name;
+        if($request->hasFile('image')){
+            $request->image->store('images');
+            $name = $request->image->hashName();
+            $input['image'] = 'images/' . $name;
+        }
         
         $product = $this->productRepository->create($input);
 
