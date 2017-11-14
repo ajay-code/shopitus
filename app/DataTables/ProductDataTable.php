@@ -75,7 +75,7 @@ class ProductDataTable extends DataTable
             'deal_type' => ['name' => 'deal_type_id', 'data' => 'deal_type.name'],
             'store' => ['name' => 'store_id', 'data' => 'store.name'],
             'image' => ['name' => 'image', 'data' => 'image', 'render' => '"<a href=\"/admin/storage/"+data+"\" target=\"_black\"><img src=\"/admin/storage/"+data+"\" height=\"50\"/></a>"'],
-            'link' => ['name' => 'link', 'data' => 'link', 'render' => '"<a href=\""+data+"\" target=\"_black\">"+data+" </a>"'],
+            'link' => ['name' => 'link', 'data' => 'link', 'render' => '"<a href=\""+data+"\" class=\"btn btn-primary\" target=\"_black\">Visit Link</a>"'],
             'text' => ['name' => 'text', 'data' => 'text']
         ];
     }

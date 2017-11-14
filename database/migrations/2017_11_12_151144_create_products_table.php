@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('deal_type_id')->unsigned()->nullable();
             $table->integer('store_id')->unsigned()->nullable();
             $table->string('image')->nullable();
-            $table->string('link');
+            $table->string('link', 3000);
             $table->text('text');
             $table->timestamps();
             $table->foreign('product_category_id')->references('id')->on('product_categories');
