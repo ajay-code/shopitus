@@ -15,3 +15,7 @@
 </li>
 
 
+<li class="{{ Request::is('recommendedDeals*') ? 'active' : '' }}">
+    <a href="{!! route('recommendedDeals.index') !!}"><i class="fa fa-edit"></i><span>Recommended Deals</span></a>
+</li>
+

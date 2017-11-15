@@ -23,6 +23,16 @@ class ProductApiController extends Controller
         if($request->store){
             $products = $products->where('store_id', $request->store);
         }
+
+
+        if($request->q){
+            $products = $products->where(function($query)use($request){
+                $query = $query->where('name', 'like' , "%{$request->q}%");
+                $query = $query->orWhere('text', 'like' , "%{$request->q}%");
+                return $query;
+            });
+        }
+
         $products = $products->paginate(8);
         return response()->json([
             'data' => $products->items(),
